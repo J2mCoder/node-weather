@@ -7,3 +7,10 @@
 body{
   background-color: rgba(0, 0, 255, 0.257);
 }
+
+.spinner {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}

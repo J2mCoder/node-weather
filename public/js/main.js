@@ -1,19 +1,23 @@
 const q = document.getElementById('q')
 const form = document.getElementById('form')
 const cardMetoe = document.querySelector('.cardMetoe')
+const spinner = document.querySelector('.spinner')
 
 form.addEventListener('submit', (e) => {
   e.preventDefault()
+  spinner.style.display = 'flex';
   cardMetoe.innerHTML = ''
   const query = e.target.elements.q.value
 
   fetch(`/weather?q=${query}`)
     .then(res => res.json())
     .then(data => {
+      spinner.style.display = 'none';
       const name = data.name
       const description = data.description
       const icon = data.icon
       const temp = data.temp
+      const error = data.error
       let temperaturePhrase = ''
 
       if (temp < 0) {
@@ -29,22 +33,24 @@ form.addEventListener('submit', (e) => {
       }
 
       let cloudPhrase = ''
-      if (description.includes('nuage')) {
+      if (description?.includes('nuage')) {
         cloudPhrase = `Les nuages ressemblent à des plumes qui s'étirent dans le ciel bleu.`
-      } else if (description.includes('ciel dégagé')) {
+      } else if (description?.includes('ciel dégagé')) {
         cloudPhrase = `Le ciel est d'un bleu éclatant, sans le moindre nuage à l'horizon.`
-      } else if (description.includes('pluie')) {
+      } else if (description?.includes('pluie')) {
         cloudPhrase = `Les nuages sont lourds et sombres, ils déversent leur colère en averses torrentielles.`
-      } else if (description.includes('neige')) {
+      } else if (description?.includes('neige')) {
         cloudPhrase = `Les nuages sont blancs et duveteux, ils saupoudrent la terre de flocons immaculés.`
-      } else if (description.includes('brouillard')) {
+      } else if (description?.includes('brouillard')) {
         cloudPhrase = `Le brouillard enveloppe la ville d'un voile mystérieux.`
-      } else if (description.includes('vent')) {
+      } else if (description?.includes('vent')) {
         cloudPhrase = `Le vent souffle fort et fait danser les feuilles.`
-      } else if (description.includes('orage')) {
+      } else if (description?.includes('orage')) {
         cloudPhrase = `L'orage gronde et illumine le ciel de ses éclairs.`
-      } else if (description.includes('couvert')) {
+      } else if (description?.includes('couvert')) {
         cloudPhrase = `Le ciel est gris et triste, il n'y a pas la moindre éclaircie.`
+      } else {
+        cloudPhrase = false
       }
 
       const card = `
@@ -66,7 +72,26 @@ form.addEventListener('submit', (e) => {
         </div>
       </div>
       `
-      //jean de Dieu
-      cardMetoe.insertAdjacentHTML('beforeend', card)
+      const danger = `
+      <div class="container d-flex justify-content-center mt-4 col-lg-6">
+        <div class="card w-80">
+          <div class="card-header bg-dark text-white border-bottom" id="nameCity">
+            Prévisions météo
+          </div>
+          <div class="card-body bg-dark text-white">
+            <blockquote class="blockquote mb-0">
+              <h2>Une erreur inattendue est survenue</h2>
+              <p>${error}</p>
+            </blockquote>
+          </div>
+        </div>
+      </div>`
+      if (name) {
+        cardMetoe.insertAdjacentHTML('beforeend', card)
+      }
+
+      if (error) {
+        cardMetoe.insertAdjacentHTML('beforeend', danger)
+      }
     })
 })
