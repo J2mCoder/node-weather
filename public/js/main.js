@@ -66,6 +66,7 @@ form.addEventListener('submit', (e) => {
         </div>
       </div>
       `
+      //jean de Dieu
       cardMetoe.insertAdjacentHTML('beforeend', card)
     })
 })
