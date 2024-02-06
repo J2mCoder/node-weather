@@ -7,7 +7,7 @@ form.addEventListener('submit', (e) => {
   cardMetoe.innerHTML = ''
   const query = e.target.elements.q.value
 
-  fetch(`http://localhost:3000/weather?q=${query}`)
+  fetch(`/weather?q=${query}`)
     .then(res => res.json())
     .then(data => {
       const name = data.name

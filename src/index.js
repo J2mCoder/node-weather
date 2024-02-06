@@ -4,7 +4,7 @@ const { engine } = require('express-handlebars')
 const { weather } = require('../utils/weather')
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 
 const pathDirectoryViews = path.join(__dirname, '../views')
