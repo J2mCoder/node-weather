@@ -6,6 +6,7 @@ const { weather } = require('../utils/weather')
 const app = express()
 const port = process.env.PORT || 3000
 
+const pathDirectoryViews = path.join(__dirname, '../views')
 const pathDirectoryPublic = path.join(__dirname, '../public')
 
 app.engine('handlebars', engine())
