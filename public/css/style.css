@@ -29,7 +29,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 20px;
+  padding: 5px;
   color: var(--text-100);
 }
 
@@ -114,7 +114,7 @@ section {
   padding: 10px;
   border-radius: 15px;
   border: none;
-  height: 170px;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -525,7 +525,7 @@ section {
 
 @media (max-width: 575px) {
   section {
-    width: 97%;
+    width: 99%;
   }
   .box-left {
     border: none;
@@ -542,12 +542,15 @@ section {
   .form-text {
     font-size: xx-small;
   }
+  .cards {
+    height: auto;
+  }
 }
 
 /* Styles pour les écrans small (SM) */
 @media (min-width: 576px) and (max-width: 767px) {
   section {
-    width: 80%;
+    width: 100%;
   }
   .box-left {
     border: none;
@@ -564,12 +567,15 @@ section {
   .jelly-triangle {
     margin-top: -150px;
   }
+  .cards {
+    height: auto;
+  }
 }
 
 /* Styles pour les écrans medium (MD) */
 @media (min-width: 768px) and (max-width: 1000px) {
   section {
-    width: 95%;
+    width: 97%;
   }
   .box-left {
     border: none;

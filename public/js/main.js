@@ -64,7 +64,7 @@ const updataHtml = (data, name, description, icon, temp, humidity, pressure, fee
         </p>
       </div>
       `
-    const descrip = `<div class="card cards" style="overflow:hidden"><p class="descriptP"><div><span class="float-start rounded m-0 ms-0 position-absolute top-0" style="left: 0;paddind:2px; background:#cee8ff;color:#0f1c2e">Description</span></div><br/>${enoncerTemp(description)}</p></div>`
+    const descrip = `<div class="card cards" style="overflow:hidden"><p class="descriptP" style="font-size:14px"><div><span class="float-start rounded m-0 ms-0 position-absolute top-0" style="left: 0;paddind:2px; background:#cee8ff;color:#0f1c2e">Description</span></div><br/>${enoncerTemp(description)}</p></div>`
     const annonce = `
       <div class="cards card">
         <p class="mt-3">
