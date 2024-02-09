@@ -28,13 +28,6 @@ app.get('/weather', (req, res) => {
 
 })
 
-app.get('/about', (req, res) => {
-  res.render('about',
-    {
-      title: 'Weather App'
-    })
-})
-
 /* app.use((req, res) => {
   res.status(404).render('404',{
     title: '404'
