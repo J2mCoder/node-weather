@@ -1,22 +1,92 @@
-<div class="container mt-4">
-  <div class="row cardMetoe p-4">
-    <div class="container d-flex justify-content-center mt-4 col-lg-6">
-      <div class="card w-80">
-        <div class="card-body bg-dark text-white">
-          <div class="d-flex">
-            <input type="search" class="form-control me-3" id="exampleFormControlInput1" placeholder="name@example.com">
-            <input type="submit" class="btn btn-dark border" value="rechercher">
+<section id="app">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 box-left">
+        <form class="input-group mb-3" id="form">
+          <input type="search" class="form-control" placeholder="Entrez le nom d'une ville..."
+            aria-label="Entrez le nom d'une ville..." aria-describedby="button-addon2" name="q" />
+          <button class="btn btn-outline-secondary searchBtn" type="submit" id="button-addon2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+              viewBox="0 0 16 16">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            </svg>
+          </button>
+        </form>
+        <div class="container">
+          <div class="row cardLeftBlock">
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8 box-right">
+        <div class="loader-search">
+          <div class="jelly-triangle">
+            <div class="jelly-triangle__dot"></div>
+            <div class="jelly-triangle__traveler"></div>
+          </div>
+
+          <svg width="0" height="0" class="jelly-maker">
+            <defs>
+              <filter id="uib-jelly-triangle-ooze">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="7.3" result="blur"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                  result="ooze"></feColorMatrix>
+                <feBlend in="SourceGraphic" in2="ooze"></feBlend>
+              </filter>
+            </defs>
+          </svg>
+        </div>
+        <div class="geoTitle p-2 rounded">
+          <span>Prévisions météo</span>
+        </div>
+        <div class="row MsgInsertCity d-flex justify-content-center align-items-center mt-2 ms-2">
+          <div class="row card-MsgInsertCity p-3">
+            <div class="col-6 d-flex justify-content-center">
+              <img src="/icons/plans.gif" alt="" />
+            </div>
+            <div class="col-6 d-flex justify-content-start align-items-center">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Perferendis placeat et tenetur?
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3 mb-3">
+          <div class="col-md-6 mb-3" id="card-1">
+
+          </div>
+          <div class="col-md-6" id="card-2">
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 mb-3" id="card-3">
+
+          </div>
+          <div class="col-md-4" id="card-4">
+
           </div>
         </div>
       </div>
     </div>
+</section>
+
+{{! loader }}
+<div class="loader" id="loader">
+  <div class="jelly-triangle">
+    <div class="jelly-triangle__dot"></div>
+    <div class="jelly-triangle__traveler"></div>
   </div>
-</div>
 
-
-
-<div class="spinner">
-  <div class="spinner-border" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
+  <svg width="0" height="0" class="jelly-maker">
+    <defs>
+      <filter id="uib-jelly-triangle-ooze">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="7.3" result="blur"></feGaussianBlur>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="ooze">
+        </feColorMatrix>
+        <feBlend in="SourceGraphic" in2="ooze"></feBlend>
+      </filter>
+    </defs>
+  </svg>
 </div>

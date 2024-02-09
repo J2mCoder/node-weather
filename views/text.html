@@ -1,0 +1,311 @@
+<section id="app">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 box-left">
+        <form class="input-group mb-3" id="form">
+          <input type="search" class="form-control" placeholder="Entrez le nom d'une ville..."
+            aria-label="Entrez le nom d'une ville..." aria-describedby="button-addon2" name="q" />
+          <button class="btn btn-outline-secondary searchBtn" type="submit" id="button-addon2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+              viewBox="0 0 16 16">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            </svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="col-lg-8 box-right">
+        <div class="loader-search">
+          <div class="jelly-triangle">
+            <div class="jelly-triangle__dot"></div>
+            <div class="jelly-triangle__traveler"></div>
+          </div>
+
+          <svg width="0" height="0" class="jelly-maker">
+            <defs>
+              <filter id="uib-jelly-triangle-ooze">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="7.3" result="blur"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                  result="ooze"></feColorMatrix>
+                <feBlend in="SourceGraphic" in2="ooze"></feBlend>
+              </filter>
+            </defs>
+          </svg>
+        </div>
+        <div class="geoTitle p-2 rounded">
+          <span>Prévisions météo</span>
+        </div>
+        <div class="row preview mt-4 ">
+          <div class="col-12">
+            <div class="cards card ">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit inventore nulla similique? Eos neque debitis
+              quas placeat cupiditate quis, iusto tempore quos reiciendis, earum hic consequuntur tempora laborum
+              ratione
+              consequatur.
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3 mb-3">
+          <div class="col-md-6 mb-3" id="card-1">
+
+          </div>
+          <div class="col-md-6" id="card-2">
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 mb-3" id="card-3">
+
+          </div>
+          <div class="col-md-4" id="card-4">
+
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+{{! loader }}
+<div class="loader" id="loader">
+  <div class="jelly-triangle">
+    <div class="jelly-triangle__dot"></div>
+    <div class="jelly-triangle__traveler"></div>
+  </div>
+
+  <svg width="0" height="0" class="jelly-maker">
+    <defs>
+      <filter id="uib-jelly-triangle-ooze">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="7.3" result="blur"></feGaussianBlur>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="ooze">
+        </feColorMatrix>
+        <feBlend in="SourceGraphic" in2="ooze"></feBlend>
+      </filter>
+    </defs>
+  </svg>
+</div>
+
+
+{{! <div class="row MsgInsertCity d-flex justify-content-center align-items-center mt-2 ms-2">
+  <div class="row card-MsgInsertCity p-3">
+    <div class="col-6 d-flex justify-content-center">
+      <img src="/icons/plans.gif" alt="" />
+    </div>
+    <div class="col-6 d-flex justify-content-start align-items-center">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Perferendis placeat et tenetur?
+    </div>
+  </div>
+</div> }}
+
+
+
+
+
+
+
+
+
+<form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+<div class="container bg-dark">
+  <div class="col-md-7 cards" id="card-3">
+    <div class="col-5">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
+      odit.
+    </div>
+    <div class="col-2 me-2">
+      <div class="cards-info">
+        <span class="badge">Info</span>
+        <span>25</span>
+        <span>hhhht</span>
+      </div>
+    </div>
+    <div class="col-2 me-2">
+      <div class="cards-info">
+        <span class="badge">Info</span>
+        <p>25</p>
+        <p>hhfhf</p>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="cards-info">
+        <span class="badge">Info</span>
+        <p>25</p>
+        <p>hhfhf</p>
+      </div>
+    </div>
+    <div class="col-md-5" id="card-4">
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="card card-city">
+  <div>
+    <div class="col-6">
+      <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="512" height="512">
+        <path fill="#0f1c2e" d="M12,6a4,4,0,1,0,4,4A4,4,0,0,0,12,6Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,12Z" />
+        <path fill="#0f1c2e"
+          d="M12,24a5.271,5.271,0,0,1-4.311-2.2c-3.811-5.257-5.744-9.209-5.744-11.747a10.055,10.055,0,0,1,20.11,0c0,2.538-1.933,6.49-5.744,11.747A5.271,5.271,0,0,1,12,24ZM12,2.181a7.883,7.883,0,0,0-7.874,7.874c0,2.01,1.893,5.727,5.329,10.466a3.145,3.145,0,0,0,5.09,0c3.436-4.739,5.329-8.456,5.329-10.466A7.883,7.883,0,0,0,12,2.181Z" />
+      </svg>
+      <span id="city">Paris</span>
+    </div>
+    <div class="col-6 d-flex justify-content-end p-2">
+      21:45 mp
+      <br />
+      Lundi
+    </div>
+  </div>
+</div>
+
+
+<div class="col-lg-6" style="height: auto;">
+
+</div>
+
+<div class="col-lg-6">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section>
+  <div class="container">
+    <div class="row">
+      {{!-- block left content --}}
+      <div class="col-lg-4 box-left">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
+            aria-describedby="button-addon2">
+          <button class="btn btn-outline-secondary searchBtn" type="button" id="button-addon2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+              viewBox="0 0 16 16">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            </svg>
+          </button>
+        </div>
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eaque aspernatur, amet omnis sint nam laborum sit
+        quasi maxime commodi, nostrum vel quaerat nisi dolorum soluta accusantium blanditiis voluptates dolor?
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {{!-- block right content --}}
+      <div class="col-lg-8 box-right">
+
+        {{!-- block prevision content --}}
+        <div class="geoTitle p-2 rounded">
+          <span>Prévisions météo</span>
+        </div>
+
+        {{!-- block info content --}}
+        <div class="row mt-2 gap-4">
+          <div class="col-lg-6">
+            <div class="card card-info-temp col-lg-12">
+              <div class="row">
+                <div class="col-lg-6">
+                  <span>Maintenant</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6 temps">
+                  <p>25°c</p>
+                </div>
+                <div class="col-6 icon">
+                  <img src="/image/nuage.jpg" height="40" width="40" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="card col-lg-12 mt-3">
+              jean de Dieu
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi autem repudiandae nobis rem eaque. Soluta
+              excepturi
+              recusandae expedita eligendi quia dignissimos suscipit. Porro et qui natus deserunt veniam ut quia!
+            </div>
+          </div>
+          <div class="card card-info-descript col-lg-5">
+            <div class="col-lg-12">
+              <p>
+                <img src="/image/nuage.jpg" alt="image">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex adipisci, molestiae, tempora earum labore
+                beatae minus ad
+                ducimus repudiandae porro nobis odit commodi perspiciatis ipsam veniam consectetur, facere esse modi!
+              </p>
+            </div>
+          </div>
+        </div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus quisquam molestiae ipsa quod earum
+        error debitis illo. Necessitatibus tenetur id commodi dicta dignissimos iusto enim officia, pariatur, soluta quo
+        optio?
+      </div>
+    </div>
+  </div>
+</section>

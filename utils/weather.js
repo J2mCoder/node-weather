@@ -10,12 +10,7 @@ const weather = (query, callback) => {
           error: 'Désolé, nous n’avons pas trouvé de correspondance pour cette ville. Veuillez vérifier l’orthographe et réessayer.'
         })
       } else {
-        callback({
-          name: data.name,
-          temp: data.main.temp,
-          description: data.weather[0].description,
-          icon: data.weather[0].icon
-        })
+        callback(data)
       }
     })
 }

@@ -6,8 +6,6 @@ const { weather } = require('../utils/weather')
 const app = express()
 const port = process.env.PORT || 3000
 
-
-const pathDirectoryViews = path.join(__dirname, '../views')
 const pathDirectoryPublic = path.join(__dirname, '../public')
 
 app.engine('handlebars', engine())
@@ -18,17 +16,12 @@ app.use(express.static(pathDirectoryPublic))
 
 app.get('/', (req, res) => {
   res.render('home', {
-    title: 'Home'
+    title: 'Weather App'
   })
 })
 
 app.get('/weather', (req, res) => {
   const { q } = req.query
-
-  /* if (!q) {
-    res.send("⚠️ Oups ! Vous avez oublié de saisir le nom de la ville. Veuillez le spécifier pour continuer.")
-  }
-  */
   weather(q, (data) => {
     res.send(data)
   })
@@ -38,7 +31,7 @@ app.get('/weather', (req, res) => {
 app.get('/about', (req, res) => {
   res.render('about',
     {
-      title: 'About'
+      title: 'Weather App'
     })
 })
 
