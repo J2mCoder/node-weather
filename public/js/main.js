@@ -13,6 +13,8 @@ const iconImag = document.getElementById('iconImag')
 const descriptionH = document.getElementById('description')
 const annonce = document.getElementById('annonce')
 const cardLeftBlock = document.querySelector('.cardLeftBlock')
+const cardLeftBlock1 = document.querySelector('.cardLeftBlock1')
+const welc = document.querySelector('.welc')
 
 window.addEventListener("load", function () {
   loader.style.display = "none";
@@ -22,6 +24,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault()
   loaderSearch.style.display = "flex";
   MsgInsertCity.classList.add("d-none")
+  welc.classList.add("d-none")
   const query = e.target.elements.q.value
   fetchData(query)
 })
@@ -32,22 +35,24 @@ const fetchData = (query) => {
     .then(data => {
       loaderSearch.style.display = "none";
       MsgInsertCity.classList.add("d-none")
-      updataHtml(data)
-      console.log(data);
+      if (!data.error) {
+        var name = data.name
+        var description = data.weather[0].description
+        var icon = data.weather[0].icon
+        var temp = data.main.temp
+        var feels_like = data.main.feels_like
+        var humidity = data.main.humidity
+        var pressure = data.main.pressure
+      } else {
+        var error = data.error
+        MsgInsertCity.classList.add("d-flex")
+      }
+      updataHtml(data, name, description, icon, temp, humidity, pressure, feels_like, error)
     })
   form.reset()
 }
 
-const updataHtml = (data) => {
-  const name = data.name
-  const description = data.weather[0].description
-  const icon = data.weather[0].icon
-  const temp = data.main.temp
-  const error = data.error
-
-  const feels_like = data.main.feels_like
-  const humidity = data.main.humidity
-  const pressure = data.main.pressure
+const updataHtml = (data, name, description, icon, temp, humidity, pressure, feels_like, error) => {
 
   if (name) {
     const card1html = `
@@ -205,6 +210,7 @@ const updataHtml = (data) => {
         </span>
       </div>`
 
+
     cardLeftBlock.innerHTML = nameCity
     card1.innerHTML = card1html
     card2.innerHTML = descrip
@@ -215,8 +221,38 @@ const updataHtml = (data) => {
   }
 
   if (error) {
-    app.insertAdjacentHTML('beforeend', error)
-    MsgInsertCity.classList.add("d-none")
+    const errorCity = `
+    <div class="cards-left cardsError order-1" >
+        <span class="p-2 rounded me-3" style="background:#cee8ff">
+          <svg viewBox="0 0 32 32" fill="#0f1c2e" class="" height="30px" width="30px" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <style>
+                  .cls-1 {
+                    fill: none;
+                  }
+                </style>
+              </defs>
+              <title />
+              <g data-name="Layer 2" id="Layer_2">
+                <path
+                  d="M22.7,28H9.3a6.25,6.25,0,0,1-5.47-3.15,6.15,6.15,0,0,1,0-6.22L10.56,7.12a6.3,6.3,0,0,1,10.88,0l6.71,11.51h0a6.15,6.15,0,0,1,0,6.22A6.25,6.25,0,0,1,22.7,28ZM16,6a4.24,4.24,0,0,0-3.71,2.12L5.58,19.64a4.15,4.15,0,0,0,0,4.21A4.23,4.23,0,0,0,9.3,26H22.7a4.23,4.23,0,0,0,3.73-2.15,4.15,4.15,0,0,0,0-4.21L19.71,8.12A4.24,4.24,0,0,0,16,6Z" />
+                <path class="cls-1"
+                  d="M16,12a.54.54,0,0,0-.44.22.52.52,0,0,0-.1.48L16,14.88l.54-2.18a.52.52,0,0,0-.1-.48A.54.54,0,0,0,16,12Z" />
+                <path
+                  d="M18,11a2.56,2.56,0,0,0-4,0,2.5,2.5,0,0,0-.46,2.19L15,19.24a1,1,0,0,0,1.94,0l1.51-6.06A2.5,2.5,0,0,0,18,11ZM16.54,12.7,16,14.88l-.54-2.18a.52.52,0,0,1,.1-.48.55.55,0,0,1,.88,0A.52.52,0,0,1,16.54,12.7Z" />
+                <circle cx="16" cy="22.5" r="1.5" />
+              </g>
+              <g id="frame">
+                <rect class="cls-1" height="32" width="32" />
+              </g>
+            </svg>
+        </span>
+        <span id="cityName">
+          Oups ! Nous n’avons pas trouvé la ville que vous avez saisie. Vérifiez l’orthographe ou essayez une autre ville.
+        </span>
+      </div>`
+    cardLeftBlock1.insertAdjacentHTML("beforeend", errorCity)
+    MsgInsertCity.classList.add("d-flex")
   }
 }
 

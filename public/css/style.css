@@ -58,10 +58,16 @@ section {
 }
 
 .cards-left {
-  color: var(--accent-200);
+  color: var(--text-200);
   padding: 10px;
   display: flex;
   align-items: center;
+}
+
+.cardsError {
+  background-color: var(--bg-300);
+  padding: 10px;
+  border-radius: 15px;
 }
 
 .card-city {
@@ -533,6 +539,9 @@ section {
   .card-anounce {
     margin-top: 13px;
   }
+  .form-text {
+    font-size: xx-small;
+  }
 }
 
 /* Styles pour les écrans small (SM) */
@@ -564,6 +573,9 @@ section {
   }
   .box-left {
     border: none;
+  }
+  .box-right {
+    margin-top: -50px;
   }
   .geoTitle {
     width: 100%;
